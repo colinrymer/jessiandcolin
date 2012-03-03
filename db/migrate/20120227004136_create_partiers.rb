@@ -4,7 +4,7 @@ class CreatePartiers < ActiveRecord::Migration
       t.string :name
       t.boolean :bridesmaid, :null => false, :default => false
       t.string :picture_file
-      t.string :description
+      t.text :description
 
       t.timestamps
     end

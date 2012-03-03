@@ -6,6 +6,7 @@
 </div>
 <div id="wedding-party-row" class="row">
   <div id="wedding-party-content" class="span12">
+  <!--
     <div class="row">
       <div class="span6">
         The Bridesmaids:
@@ -28,6 +29,7 @@
         </ul>
       </div>
     </div>
+  -->
     
     <style type="text/css" media="screen">
       .wedding-party-bridesmaids {
@@ -48,7 +50,7 @@
       <% @bridesmaids.each do |bridesmaid| %>
         <div id="<%= bridesmaid.name %>" class="wedding-party-bio row-fluid">
           <div id="<%= bridesmaid.name %>-picture" class="span3">
-            <%= image_tag bridesmaid.picture_file %>
+            <!-- <%= image_tag bridesmaid.picture_file %> -->
           </div><!-- /<%= bridesmaid.name %>-picture -->
           <div id="<%= bridesmaid.name %>-text" class="span8">
             <h3><%= bridesmaid.name %>&nbsp;&mdash;&nbsp;<%= bridesmaid.title %></h3>
@@ -63,7 +65,7 @@
       <% @groomsmen.each do |groomsman| %>
         <div id="<%= groomsman.name %>" class="wedding-party-bio row-fluid">
           <div id="<%= groomsman.name %>-picture" class="span3">
-            <%= image_tag groomsman.picture_file %>
+            <!-- <%= image_tag groomsman.picture_file %> -->
           </div><!-- /<%= groomsman.name %>-picture -->
           <div id="<%= groomsman.name %>-text" class="span8">
             <h3><%= groomsman.name %>&nbsp;&mdash;&nbsp;<%= groomsman.title %></h3>
