@@ -13,3 +13,8 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+#Ignore database.yml file to protect senstiive data
+/config/database.yml
+
+/config/deploy.rb
