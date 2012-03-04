@@ -13,6 +13,8 @@ gem 'bcrypt-ruby', '3.0.1'
 # Gem used for admin section
 gem 'activeadmin', '0.4.0'
 
+gem 'capistrano', '2.11.2'
+
 group :development do
   gem 'annotate', '~> 2.4.1.beta'
   gem 'sqlite3'

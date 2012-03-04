@@ -2,7 +2,7 @@ Partier.create!( name: "Ashley Boudreau",
                 title: "Matron of Honor",
                 bridesmaid: true,
                 picture_file: 'ashley.jpg',
-                description: "Ashley and Jessi have been best friends since they were nine years old. They share a love of bagels, puppies, and wine, and they feel lost when they live more than 30 minutes from each other. Ashley has two handsome boys and lives in Seymour, TN with her husband."
+                description: "Ashley and Jessi have been best friends since they were nine years old. They share a love of bagels and puppies, and they feel lost when they live more than 30 minutes from each other. Ashley has two handsome boys and lives in Seymour, TN with her husband Jon."
               )
 
 Partier.create!( name: "Shannon Acree",
@@ -16,21 +16,21 @@ Partier.create!( name: "Claire Earll",
                 title: "Bridesmaid",
                 bridesmaid: true,
                 picture_file: 'claire.jpg',
-                description: "Claire and Jessi met at Vanderbilt University where they were in several of the same classes. Claire sometimes goes by her alter ego, Blair Curl, and she and Jessi spent an embarrassingly huge amount of junior year sitting on their Futon, eating hummus, and watching SVU reruns. She lives in her hometown of Chicago, IL and is engaged to her college sweetheart."
+                description: "Claire and Jessi met at Vanderbilt University where they were in several of the same classes. She and Jessi spent their senior year in their apartment fondly named Top o&rsquo; Johns since it was above both a Papa John&rsquo;s and a Jimmy John&rsquo;s. Claire lives in her hometown of Chicago, IL and is engaged to her college sweetheart."
               )
 
 Partier.create!( name: "Lindsey Galbraith",
                 title: "Bridesmaid",
                 bridesmaid: true,
                 picture_file: 'lindsey.jpg',
-                description: "Lindsey and Jessi also met at Vanderbilt and were roommates junior year. Lindsey (or LG) is one of the few friends who shares Jessi's love of poop jokes and play dough sculptures. LG recently graduated from SMU School of Law and is getting married to her fiance Jason in August 2012."
+                description: "Lindsey and Jessi also met at Vanderbilt and were roommates junior year. Lindsey (or LG) is one of the few friends who shares Jessi's love of immature jokes and play dough sculptures. LG recently graduated from SMU School of Law and is getting married to her fiance Jason in August 2012."
               )
 
 Partier.create!( name: "Sam Schrieber",
                 title: "Bridesmaid",
                 bridesmaid: true,
                 picture_file: 'sam.jpg',
-                description: "Along with Claire and Lindsey, Sam and Jessi became best of friends at Vanderbilt. She and Jessi are famous for their fake bachelorette parties, because does someone REALLY have to be engaged to be a bachelorette? Sam lives in Los Angeles, CA and works at USC. Conquer and Prevail!"
+                description: "Along with Claire and Lindsey, Sam and Jessi became best of friends at Vanderbilt. She and Jessi spent the summers after Junior and Senior years hanging out and eating hot dogs from Paradise Park. Sam lives in Los Angeles, CA and works at USC. Conquer and Prevail!"
               )
 
 Partier.create!( name: "Brice Holder",
