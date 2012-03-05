@@ -40,13 +40,6 @@ Partier.create!( name: "Brice Holder",
                 description: ''
               )
 
-Partier.create!( name: "Evan Watkins",
-                title: "Groomsman",
-                bridesmaid: false,
-                picture_file: 'evan.jpg',
-                description: ''
-              )
-
 Partier.create!( name: "George Szarka",
                 title: "Groomsman",
                 bridesmaid: false,
@@ -65,5 +58,12 @@ Partier.create!( name: "Noah Layne",
                 title: "Groomsman",
                 bridesmaid: false,
                 picture_file: 'noah.jpg',
+                description: ''
+              )
+
+Partier.create!( name: "Taylor Gerber",
+                title: "Groomsman",
+                bridesmaid: false,
+                picture_file: 'taylor.jpg',
                 description: ''
               )

@@ -15,13 +15,15 @@ gem 'activeadmin', '0.4.0'
 
 gem 'capistrano', '2.11.2'
 
+gem 'sqlite3'
+
+
 group :development do
   gem 'annotate', '~> 2.4.1.beta'
-  gem 'sqlite3'
 end
 
 group :production do
-  gem 'pg'
+  #gem 'pg'
 end
 
 # Gems used only for assets and not required
