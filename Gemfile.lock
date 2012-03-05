@@ -107,7 +107,6 @@ GEM
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
     orm_adapter (0.0.6)
-    pg (0.13.2)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
     polyglot (0.3.3)
@@ -171,7 +170,6 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   jquery-rails (= 2.0.0)
   kaminari (= 0.13.0)
-  pg
   rails (= 3.2.0)
   sass-rails (~> 3.2.3)
   sqlite3
