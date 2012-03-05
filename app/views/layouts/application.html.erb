@@ -57,43 +57,49 @@
 </head>
 
 <body>
-  
-  <div id="nav-container" class="container container-fluid">
-    <div class="row-fluid">
-      <div class="span12 title_div">
-        <span class="title_names">Jessi</span><span class="title_ampersand">&amp;</span><span class="title_names">Colin</span><span class="title_date">September 8th, 2012</span>
-        <hr />
-      </div>
-      <div class="span12 navlinks">
-        <%=link_to "Home", root_path %>&nbsp;|&nbsp;
-        <%=link_to "Story", story_path %>&nbsp;|&nbsp;
-        <%=link_to "Wedding", wedding_path %>&nbsp;|&nbsp;
-        <%=link_to "Registry", registry_path %>&nbsp;|&nbsp;
-        <a href="rsvp">RSVP</a>&nbsp;|&nbsp;
-        <%=link_to "Wedding Party", party_path %>&nbsp;|&nbsp;
-        <%=link_to "Accomodations", hotel_path %>&nbsp;|&nbsp;
-        <%=link_to "&rsquo;Noog".html_safe, noog_path %>&nbsp;|&nbsp;
-        <%=link_to "Directions", direction_path %>
+  <div class="global-container">
+    <div id="nav-container" class="container container-fluid">
+      <div class="row-fluid">
+        <div class="span12 title_div">
+          <span class="title_names">Jessi</span><span class="title_ampersand">&amp;</span><span class="title_names">Colin</span><span class="title_date">September 8th, 2012</span>
+          <hr />
+        </div>
+        <div class="span12 navlinks">
+          <%=link_to "Home", root_path %>&nbsp;|&nbsp;
+          <%=link_to "Story", story_path %>&nbsp;|&nbsp;
+          <%=link_to "Wedding", wedding_path %>&nbsp;|&nbsp;
+          <%=link_to "Registry", registry_path %>&nbsp;|&nbsp;
+          <a href="rsvp">RSVP</a>&nbsp;|&nbsp;
+          <%=link_to "Wedding Party", party_path %>&nbsp;|&nbsp;
+          <%=link_to "Accomodations", hotel_path %>&nbsp;|&nbsp;
+          <%=link_to "&rsquo;Noog".html_safe, noog_path %>&nbsp;|&nbsp;
+          <%=link_to "Directions", direction_path %>
+        </div>
       </div>
     </div>
+
+    <div class="container container-fluid">
+      <div class="row">
+        <div id="main-span" class="span12">
+          <%= yield %>
+        </div><!-- /main-span -->
+      </div><!--/row-->
+      
+      <footer id="footer">
+        <div class="row">
+        <div id="footer-span" class="span12">
+          <hr />
+          <p>Built by Colin Rymer. &copy; 2012</p>
+        </div><!-- /footer-span -->
+      </div><!--/row-->
+        
+      </footer>
+    </div><!--/.fluid-container-->
+
+    <!--[if lt IE 7 ]>
+      <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+      <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+    <![endif]-->
   </div>
-
-  <div class="container container-fluid">
-    <div class="row-fluid">
-      <div id="main-span" class="span12">
-        <%= yield %>
-      </div><!-- /main-span -->
-    </div><!--/row-->
-    <hr />
-    <footer>
-      <p>Built by Colin Rymer. &copy; 2012</p>
-    </footer>
-  </div><!--/.fluid-container-->
-
-  <!--[if lt IE 7 ]>
-    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-  <![endif]-->
-  
 </body>
 </html>

@@ -2,7 +2,60 @@
 
 body {
   margin-top: 60px;
-  height: 100%;
   background-image: url('/images/bg_farmer.jpg');
+  padding-bottom: 20px;
+  color: black;
 }
 
+html,
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+
+.global-container {
+   min-height:100%;
+   position:relative;
+}
+
+#main-span {
+   padding:10px;
+   padding-bottom:60px;   /* Height of the footer */
+}
+
+#footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;   /* Height of the footer */
+}
+
+.navlinks {
+  font-size: 20px;
+}
+
+#nav-container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.story_hr {
+  border-bottom: 1px solid black;
+}
+
+.title_names {
+  font-size: 40px;
+}
+
+.title_ampersand {
+  font-size: 50px;
+}
+
+.wedding-party-bridesmaids, .wedding-party-bio, .wedding-party-groomsmen {
+  padding: 5%;
+}
+
+.right-btn {
+  float: right;
+}
