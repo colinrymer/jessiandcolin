@@ -1,7 +1,7 @@
 Colinandjessionrails::Application.routes.draw do
 
-  match 'party/:id' => 'parties#show'
-  match 'party' => 'parties#index', as: 'party'
+  get 'party/:id' => 'parties#show'
+  get 'party' => 'parties#index', as: 'party'
 
   resource :story, :registry, :noog, :wedding, :rsvp, :hotel, :direction
 
