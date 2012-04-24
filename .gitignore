@@ -14,7 +14,7 @@
 /log/*.log
 /tmp
 
-#Ignore database.yml file to protect senstiive data
+#Ignore database.yml file to protect senstive data
 /config/database.yml
 
 /config/deploy.rb
