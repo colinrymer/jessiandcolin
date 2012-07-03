@@ -3,19 +3,21 @@
     RSVP
     %span.small Ready to Let Us Know You're Coming?
 
-  = form_for @rsvp, html: {id: 'rsvp_form', 'data-attr-guests' => (@adult_count + @children_count)} do |f|
-    - @rsvp.guests.each do |guest|
-      = f.fields_for :guests, guest do |g|
-        %fieldset{class: (guest.child? ? 'child' : 'adult')}
-          %legend #{guest.child? ? 'Child' : 'Adult'}
-          = g.hidden_field(:child) if guest.child?
-          = g.label :first_name
-          = g.text_field :first_name
-          = g.label :last_name
-          = g.text_field :last_name
+    %h2 Give us a moment, and we'll be ready for your response.
+
+  / = form_for @rsvp, html: {id: 'rsvp_form', 'data-attr-guests' => (@adult_count + @children_count)} do |f|
+  /   - @rsvp.guests.each do |guest|
+  /     = f.fields_for :guests, guest do |g|
+  /       %fieldset{class: (guest.child? ? 'child' : 'adult')}
+  /         %legend #{guest.child? ? 'Child' : 'Adult'}
+  /         = g.hidden_field(:child) if guest.child?
+  /         = g.label :first_name
+  /         = g.text_field :first_name
+  /         = g.label :last_name
+  /         = g.text_field :last_name
 
 
-    = link_to 'Add Adult', new_rsvp_path(adult_count: (1 + @adult_count), children_count: @children_count), id: 'add_adult'
-    = link_to 'Add Child', new_rsvp_path(children_count: (1 + @children_count), adult_count: @adult_count), id: 'add_child'
+  /   = link_to 'Add Adult', new_rsvp_path(adult_count: (1 + @adult_count), children_count: @children_count), id: 'add_adult'
+  /   = link_to 'Add Child', new_rsvp_path(children_count: (1 + @children_count), adult_count: @adult_count), id: 'add_child'
 
-    = f.submit "Submit", id: "submit_link"
+  /   = f.submit "Submit", id: "submit_link"

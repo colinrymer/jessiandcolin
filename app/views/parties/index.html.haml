@@ -2,14 +2,14 @@
   %h1
     The Wedding Party
     %span.small The People, Not the Reception
-  %section#bridemaids.wedding_party
+  %section#bridesmaids.wedding_party
     - @bridesmaids.each do |party|
       %div{id: party.name}
         %h2 #{party.name}&nbsp;&mdash;&nbsp;#{party.title}
-        %p= raw(party.description)
+        %p= raw(party.location)
 
   %section#groomsmen.wedding_party
     - @groomsmen.each do |party|
       %div{id: party.name}
         %h2 #{party.name}&nbsp;&mdash;&nbsp;#{party.title}
-        %p= raw(party.description)
+        %p= raw(party.location)

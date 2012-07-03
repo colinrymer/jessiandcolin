@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20120227010309) do
     t.boolean  "bridesmaid",   :default => false, :null => false
     t.string   "picture_file"
     t.text     "description"
+    t.string   "location"
     t.datetime "created_at",                      :null => false
     t.datetime "updated_at",                      :null => false
     t.string   "title"
