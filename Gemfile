@@ -15,6 +15,7 @@ gem 'bcrypt-ruby', '3.0.1'
 gem 'activeadmin', '0.4.0'
 
 gem 'capistrano', '2.11.2'
+gem 'rvm-capistrano'
 
 
 group :development do
