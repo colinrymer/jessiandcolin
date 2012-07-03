@@ -1,62 +1,254 @@
-@import "twitter/bootstrap";
+@import 'compass/reset';
+@import 'sassy-buttons';
 
-body {
-  margin-top: 60px;
-  background-image: url('/images/bg_farmer.jpg');
-  padding-bottom: 20px;
-  color: black;
+$text_color: black;
+$h1_font_size: 3.2em; /* 32px/ 10px */
+$h1_small_font_size: 0.75em; /* 24px/32px */
+
+/* =Typography */
+@media screen {
+  body {
+    font-size: 63.25%; /* 10px */
+    font-family: Georgia, serif;
+    color: $text_color
+  }
+
+  h1 {
+    font-style: italic;
+    font-weight: lighter;
+    text-align: center;
+  }
+
+  h1#logo {
+    font-size: 3.2em; /* 32px/10px */
+  }
+
+  nav ul li {
+    font-size: 1.4em; /* 14px/10px */
+    line-height: 1.6
+  }
+  footer {
+    font-size: 1.2em; /* 12px/10px */
+  }
+
+  #story, #wedding, #registry, #rsvp, #party, #hotel, #noog, #directions {
+    h1 {
+      font-size: $h1_font_size;
+      span.small {
+        font-size: $h1_small_font_size;
+      }
+    }
+
+    p {
+      font-size: 1.6em; /* 16px/10px */
+      line-height: 1.2;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      sup {
+        vertical-align: top;
+        font-size: 0.625em /* 10px/16px */
+      }
+    }
+  }
+
+  #home {
+    h1 {
+      font-size: 2.4em; /* 24px/10px*/
+      span.big_name {
+        font-size: 1.333333333em; /* 32px/24px */
+      }
+    }
+  }
+
+  #party {
+    h2 {
+      font-size: 1.8em; /* 18px/10px */
+    }
+  }
+
+  #hotel {
+    address {
+      font-size: 1.6em; /* 16px/10px */
+      strong {
+        font-size: 1.25em; /* 20px/16px */
+      }
+    }
+  }
+
+  #noog {
+    h2 {
+      font-size: 2.0em; /* 20px/10px */
+    }
+    dl {
+      dt {
+        font-size: 1.6em; /* 16px/10px */
+      }
+      dd {
+        font-size: 1.4em; /* 14px/10px */
+      }
+    }
+
+    p {
+     font-size: 1.6em; /* 16px/10px */ 
+    }
+  }
 }
 
-html,
-body {
-   margin:0;
-   padding:0;
-   height:100%;
+/* =Layout */
+@media screen {
+  html, body {
+    width: 100%;
+  }
+
+  body {
+    background: image-url("bg_farmer.jpg");
+    margin:0;
+  }
+
+  #container {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  header{
+    margin-top: 25px;
+    margin-bottom: 10px;
+  }
+
+  h1#logo {
+    display: inline;
+  }
+
+  nav {
+    display: inline;
+    float: right;
+    margin-top: 10px;
+    ul {
+      display: inline;
+      li {
+        list-style-type: none;
+        display: inline;
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-bottom: 1px;
+        padding-top: 1px;
+        border-right: 1px solid black;
+        &:last-child {
+          border-right: 0;
+          padding-right: 0;
+        }
+        a {
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 2px solid white;
+  }
+
+  #story, #wedding, #registry, #rsvp, #party, #hotel, #noog, #directions {
+    h1 {
+      span.small {
+        display: block;
+      }
+    }
+  }
+
+  #home {
+    img.banner {
+      max-width: 100%;
+      height:auto;
+    }
+    h1 span.big_name {
+      display: block;
+    }
+  }
+
+  #party {
+    h2 {
+      
+    }
+  }
+
+  #registry {
+    span{
+      width: 33.333333333%;
+      display: inline-block;
+      margin-left: auto;
+      margin-right: auto;
+      &.button_first {
+        float: left;
+      }
+      &.button_middle{
+        width: 33%;
+      }
+      &.button_last, &.button_last a{
+        float: right;
+      }
+    }
+  }
+
+  #hotel {
+    address {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      span {
+        display: block;
+      }
+    }
+
+    section.left, section.right {
+      width: 50%;
+    }
+
+
+    section.left {
+      float: left;
+    }
+
+    section.right {
+      float: right;
+    }
+  }
+
+  #noog {
+    h2 {
+      padding-top: 15px;
+      padding-bottom: 5px;
+      border-bottom: 2px solid white;
+      margin-bottom: 10px;
+    }
+
+    dd {
+      margin-left: 15px;
+      margin-bottom: 10px;
+      margin-top: 3px;
+    }
+
+    p {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
 }
 
-.global-container {
-   min-height:100%;
-   position:relative;
-}
+/* =Color */
+@media screen {
+  nav ul li a {
+    color: $text_color;
+  }
 
-#main-span {
-   padding:10px;
-   padding-bottom:60px;   /* Height of the footer */
-}
-
-#footer {
-   position:absolute;
-   bottom:0;
-   width:100%;
-   height:60px;   /* Height of the footer */
-}
-
-.navlinks {
-  font-size: 20px;
-}
-
-#nav-container {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.story_hr {
-  border-bottom: 1px solid black;
-}
-
-.title_names {
-  font-size: 40px;
-}
-
-.title_ampersand {
-  font-size: 50px;
-}
-
-.wedding-party-bridesmaids, .wedding-party-bio, .wedding-party-groomsmen {
-  padding: 5%;
-}
-
-.registry-btn {
-  margin-bottom: 15px;
-  margin-top:15px;
+  #registry{
+    a {
+      @include sassy-button("simple", 10px, 19px, #4ba3cc);
+    }
+  }
 }

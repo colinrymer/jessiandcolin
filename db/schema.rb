@@ -13,18 +13,10 @@
 
 ActiveRecord::Schema.define(:version => 20120227010309) do
 
-  create_table "families", :force => true do |t|
-    t.string   "name"
-    t.boolean  "shuttle"
-    t.string   "notes"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "guests", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.integer  "family_id"
+    t.integer  "rsvp_id"
     t.boolean  "plus_one"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -40,6 +32,14 @@ ActiveRecord::Schema.define(:version => 20120227010309) do
     t.datetime "created_at",                      :null => false
     t.datetime "updated_at",                      :null => false
     t.string   "title"
+  end
+
+  create_table "rsvps", :force => true do |t|
+    t.string   "name"
+    t.boolean  "shuttle"
+    t.string   "notes"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

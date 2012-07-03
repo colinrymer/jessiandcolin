@@ -3,7 +3,7 @@ class CreateGuests < ActiveRecord::Migration
     create_table :guests do |t|
       t.string :first_name
       t.string :last_name
-      t.integer :family_id
+      t.integer :rsvp_id
       t.boolean :plus_one
 
       t.timestamps
