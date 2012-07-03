@@ -1,0 +1,32 @@
+!!! 5
+%html
+  %head
+    %meta(charset="utf-8")/
+    %meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")/
+    %title Jessi and Colin
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")/
+    %meta(name="description" content="Jessi Peterson and Colin Rymer are getting married on 9/8/12 in Chattanooga, TN!")/
+    %meta(name="author" content="Colin Rymer")/
+
+    = stylesheet_link_tag "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    #container
+      %header
+        %h1#logo Jessi &amp; Colin
+        %nav
+          %ul
+            %li=link_to "Home", root_path
+            %li=link_to "Story", story_path
+            %li=link_to "Wedding", wedding_path
+            %Li=link_to "Registry", registry_path
+            %li=link_to "RSVP", new_rsvp_path
+            %li=link_to "Wedding Party", party_path
+            %li=link_to "Accommodations", hotel_path
+            %li=link_to "&rsquo;Noog".html_safe, noog_path
+            %li=link_to "Directions", direction_path
+      %section
+        = yield
+      %footer
+        %p Built by Colin Rymer. &copy; 2012
