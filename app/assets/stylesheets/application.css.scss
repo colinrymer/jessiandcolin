@@ -1,12 +1,18 @@
 @import 'compass/reset';
 @import 'sassy-buttons';
+// @import 'curtain';
+@import 'compass/layout/sticky-footer';
 
 $text_color: black;
 $h1_font_size: 3.2em; /* 32px/ 10px */
 $h1_small_font_size: 0.75em; /* 24px/32px */
 
+
+@include sticky-footer(66px, "#container", "#container_footer", "footer");
+
 /* =Typography */
 @media screen {
+
   body {
     font-size: 63.25%; /* 10px */
     font-family: Georgia, serif;
@@ -36,14 +42,16 @@ $h1_small_font_size: 0.75em; /* 24px/32px */
       font-size: $h1_font_size;
       span.small {
         font-size: $h1_small_font_size;
+        line-height: 1.8;
       }
     }
 
     p {
       font-size: 1.6em; /* 16px/10px */
-      line-height: 1.2;
+      line-height: 1.4;
       padding-top: 10px;
       padding-bottom: 10px;
+      text-indent: 1.5em;
       sup {
         vertical-align: top;
         font-size: 0.625em /* 10px/16px */
@@ -54,9 +62,28 @@ $h1_small_font_size: 0.75em; /* 24px/32px */
   #home {
     h1 {
       font-size: 2.4em; /* 24px/10px*/
+      line-height: 2;
       span.big_name {
+        line-height: 0.5;
+        padding-top: 0.25em;
         font-size: 1.333333333em; /* 32px/24px */
+        &:last-child {
+          padding-top: 0;
+        }
       }
+    }
+  }
+
+  #story {
+    #story_copy p {
+      padding-left: 20px;
+      padding-top: 0;
+      padding-bottom: 20px;
+    }
+    .footnote p{
+      text-indent: 0;
+      padding-top: 5px;
+      padding-bottom: 20px;
     }
   }
 
@@ -72,11 +99,23 @@ $h1_small_font_size: 0.75em; /* 24px/32px */
     }
   }
 
+  #rsvp {
+    fieldset.attending {
+      span {
+        font-size: 1.8em;
+      }
+    }
+    input, label, a {
+      font-size: 1.4em;
+    }
+  }
+
   #hotel {
     address {
       font-size: 1.6em; /* 16px/10px */
-      strong {
+      strong a {
         font-size: 1.25em; /* 20px/16px */
+        text-decoration: underline;
       }
     }
   }
@@ -120,7 +159,7 @@ $h1_small_font_size: 0.75em; /* 24px/32px */
     margin:0;
   }
 
-  #container {
+  #container, footer {
     max-width: 960px;
     margin-left: auto;
     margin-right: auto;
@@ -175,7 +214,6 @@ $h1_small_font_size: 0.75em; /* 24px/32px */
       margin-bottom: 30px;
       span.small {
         display: block;
-        
       }
     }
   }
@@ -184,15 +222,31 @@ $h1_small_font_size: 0.75em; /* 24px/32px */
     img.banner {
       max-width: 100%;
       height:auto;
+      margin-top: 30px;
     }
-    h1 span.big_name {
-      display: block;
+    h1 {
+      margin-bottom: 40px;
+
+      span.big_name {
+        display: block;
+      }
     }
   }
 
-  #party {
-    h2 {
-      
+  #story {
+    #story_container {
+      min-height: 460px;
+    }
+    #story_image {
+      width: 50%;
+      float: left;
+      img {
+        max-width: 100%;
+      }
+    }
+    #story_copy {
+      width:50%;
+      float: right;
     }
   }
 
@@ -214,6 +268,31 @@ $h1_small_font_size: 0.75em; /* 24px/32px */
     }
   }
 
+  #rsvp {
+    img {
+      max-width: 100%;
+    }
+    .response {
+      text-align: center;
+    }
+    span {
+      margin-right: 20px;
+    }
+
+    h2, span {
+      text-decoration: underline;
+    }
+
+    #rsvp_form div {
+      margin-top: 20px;
+    }
+
+    input[type='submit'] {
+      display: block;
+      margin-top: 20px;
+    }
+  }
+
   #party {
     height: 400px;
     min-height: 400px;
@@ -225,6 +304,10 @@ $h1_small_font_size: 0.75em; /* 24px/32px */
     }
     #groomsmen {
       float: right;
+      // text-align: right;
+      // p {
+      //   padding-right: 20px;
+      // }
     }
   }
 
@@ -292,6 +375,19 @@ $h1_small_font_size: 0.75em; /* 24px/32px */
   #registry{
     a {
       @include sassy-button("simple", 10px, 19px, #4ba3cc);
+    }
+  }
+
+  #rsvp {
+    input[type='submit'] {
+      @include sassy-button("simple", 10px, 19px, #1B84B6);
+      display: block; /* added to override sassy button styling */
+    }
+  }
+
+  #hotel {
+    address strong a {
+      color: black;
     }
   }
 }

@@ -1,23 +1,42 @@
 #rsvp
   %h1
     RSVP
-    %span.small Ready to Let Us Know You're Coming?
+    %span.small Ready to Let Us Know You&rsquo;re Coming?
 
-    %h2 Give us a moment, and we'll be ready for your response.
+  %p Please enter the names of each member of your party. Guests 12 and under should be listed as children.
 
-  / = form_for @rsvp, html: {id: 'rsvp_form', 'data-attr-guests' => (@adult_count + @children_count)} do |f|
-  /   - @rsvp.guests.each do |guest|
-  /     = f.fields_for :guests, guest do |g|
-  /       %fieldset{class: (guest.child? ? 'child' : 'adult')}
-  /         %legend #{guest.child? ? 'Child' : 'Adult'}
-  /         = g.hidden_field(:child) if guest.child?
-  /         = g.label :first_name
-  /         = g.text_field :first_name
-  /         = g.label :last_name
-  /         = g.text_field :last_name
+  %p If you are unable to attend, only one person&rsquo;s name is needed.
 
+  = form_for @rsvp, html: {id: 'rsvp_form', 'data-attr-guests' => (@count)} do |f|
+    #attending
+      %fieldset.attending
+        %span Attending:
+        = f.label :can_attend, "Yes", value: "true"
+        = f.radio_button :can_attend, true
+        = f.label :can_attend, "No", value: "false"
+        = f.radio_button :can_attend, false
+    #adults
+      %h2 Adults:
+      - @rsvp.guests.each do |guest|
+        = f.fields_for :guests, guest do |g|
+          %fieldset{class: 'adult'}
+            = g.label :first_name, "First Name:"
+            = g.text_field :first_name
+            = g.label :last_name, "Last Name:"
+            = g.text_field :last_name
+    - unless @rsvp.kids.empty?
+      #children
+        %h2 Children:
+        - @rsvp.kids.each do |kid|
+          = f.fields_for :kids, kid do |g|
+            %fieldset{class: 'child'}
+              = g.label :first_name, "First Name:"
+              = g.text_field :first_name
+              = g.label :last_name, "Last Name:"
+              = g.text_field :last_name
 
-  /   = link_to 'Add Adult', new_rsvp_path(adult_count: (1 + @adult_count), children_count: @children_count), id: 'add_adult'
-  /   = link_to 'Add Child', new_rsvp_path(children_count: (1 + @children_count), adult_count: @adult_count), id: 'add_child'
+    #form_controls
+      = link_to 'Add Adult', new_rsvp_path(adult_count: (1 + @adult_count), children_count: @children_count), id: 'add_adult'
+      = link_to 'Add Child', new_rsvp_path(children_count: (1 + @children_count), adult_count: @adult_count), id: 'add_child'
 
-  /   = f.submit "Submit", id: "submit_link"
+      = f.submit "Submit", id: "submit_link"

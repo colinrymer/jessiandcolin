@@ -23,10 +23,11 @@
             %Li=link_to "Registry", registry_path
             %li=link_to "RSVP", new_rsvp_path
             %li=link_to "Wedding Party", party_path
-            %li=link_to "Accommodations", hotel_path
+            %li=link_to "Accommodations", hotels_path
             %li=link_to "&rsquo;Noog".html_safe, noog_path
-            %li=link_to "Directions", direction_path
+            %li=link_to "Directions", directions_path
       %section
         = yield
-      %footer
-        %p Built by Colin Rymer. &copy; 2012
+      #container_footer
+    %footer#footer
+      %p Built by Colin Rymer. &copy; 2012

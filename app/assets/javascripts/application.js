@@ -19,31 +19,42 @@ $(function(){
   $('#add_adult').click(function(){
     index = parseInt($('#rsvp_form').attr('data-attr-guests'));
     $('#rsvp_form').attr('data-attr-guests', index + 1);
-    $('#rsvp_form').children('fieldset.adult').last().after(addAdult(index));
+    $('#adults').children('fieldset.adult').last().after(addAdult(index));
     return false;
   });
 
   $('#add_child').click(function(){
     index = parseInt($('#rsvp_form').attr('data-attr-guests'));
     $('#rsvp_form').attr('data-attr-guests', index + 1);
-    $('#rsvp_form').children('fieldset.child').last().after(addChild(index));
+    
+    if ($('#children').length > 0) {
+      $_child_fieldsets = $('#children').children('fieldset.child');
+      $_elem = (($_child_fieldsets.length > 0) ? $_child_fieldsets : $('#rsvp_form').children('fieldset')).last();
+      $_elem.after(addChild(index));
+    } else {
+      $("#adults").after(addFirstChild(index));
+    }
+    
     return false;
   });
 
   function addAdult(i){
-    return ("<fieldset class='adult'><legend>Adult</legend>"
-    + "\n<label for='rsvp_guests_attributes_" + i + "_first_name'>First name</label>"
+    return ("<fieldset class='adult'>"
+    + "\n<label for='rsvp_guests_attributes_" + i + "_first_name'>First Name:</label>"
     + "\n<input id='rsvp_guests_attributes_" + i + "_first_name' name='rsvp[guests_attributes][" + i + "][first_name]' size='30' type='text' />"
-    + "\n<label for='rsvp_guests_attributes_" + i + "_last_name'>Last name</label>"
+    + "\n<label for='rsvp_guests_attributes_" + i + "_last_name'>Last Name:</label>"
     + "\n<input id='rsvp_guests_attributes_" + i + "_last_name' name='rsvp[guests_attributes][" + i + "][last_name]' size='30' type='text' /></fieldset>");
   }
 
   function addChild(i){
-    return ("<fieldset class='child'><legend>Child</legend>"
-    + "\n<label for='rsvp_guests_attributes_" + i + "_first_name'>First name</label>"
-    + "\n<input id='rsvp_guests_attributes_" + i + "_child' name='rsvp[guests_attributes][" + 3 + "][child]' type='hidden' value='true' />"
-    + "\n<input id='rsvp_guests_attributes_" + i + "_first_name' name='rsvp[guests_attributes][" + i + "][first_name]' size='30' type='text' />"
-    + "\n<label for='rsvp_guests_attributes_" + i + "_last_name'>Last name</label>"
-    + "\n<input id='rsvp_guests_attributes_" + i + "_last_name' name='rsvp[guests_attributes][" + i + "][last_name]' size='30' type='text' /></fieldset>");
+    return ("<fieldset class='child'>"
+    + "\n<label for='rsvp_kids_attributes_" + i + "_first_name'>First Name:</label>"
+    + "\n<input id='rsvp_kids_attributes_" + i + "_first_name' name='rsvp[kids_attributes][" + i + "][first_name]' size='30' type='text' />"
+    + "\n<label for='rsvp_kids_attributes_" + i + "_last_name'>Last Name:</label>"
+    + "\n<input id='rsvp_kids_attributes_" + i + "_last_name' name='rsvp[kids_attributes][" + i + "][last_name]' size='30' type='text' /></fieldset>");
+  }
+
+  function addFirstChild(i){
+    return '<div id="children"><h2>Children:</h2>' + addChild(i) + "</div>";
   }
 });

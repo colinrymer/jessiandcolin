@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120227010309) do
+ActiveRecord::Schema.define(:version => 20120705151654) do
 
   create_table "guests", :force => true do |t|
     t.string   "first_name"
@@ -21,7 +21,14 @@ ActiveRecord::Schema.define(:version => 20120227010309) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "notes"
-    t.boolean  "child"
+  end
+
+  create_table "kids", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "rsvp_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "partiers", :force => true do |t|
@@ -39,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20120227010309) do
     t.string   "name"
     t.boolean  "shuttle"
     t.string   "notes"
+    t.boolean  "can_attend"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

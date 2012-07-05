@@ -1,0 +1,8 @@
+#rsvp
+  %h1
+    RSVP
+    %span.small You Just Told Us You&rsquo;re #{@rsvp.can_attend? ? ' Coming!' : 'Not Coming'}
+
+  = image_tag 'rsvp.jpg'
+
+  %p.response Thank you for your prompt response; #{@rsvp.can_attend? ? "we can't wait to see you in September!" : "we'll miss seeing you in September, but we understand."}
