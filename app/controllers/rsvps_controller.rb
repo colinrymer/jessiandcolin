@@ -16,6 +16,7 @@ class RsvpsController < ApplicationController
     rsvp['guests_attributes'].delete_if { |k, v| v['first_name'].empty? && v['last_name'].empty? }
     rsvp['kids_attributes'].delete_if { |k, v| v['first_name'].empty? && v['last_name'].empty? } if rsvp['kids_attributes']
     @rsvp = Rsvp.new(rsvp)
+    @rsvp.name = @rsvp.guests.first.last_name unless @rsvp.guests.empty?
     @adult_count = params[:adult_count] ? params[:adult_count].to_i : 2
     @children_count = params[:children_count] ? params[:children_count].to_i : 0
     unless @rsvp.save
