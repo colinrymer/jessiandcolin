@@ -7,13 +7,21 @@ ActiveAdmin::Dashboards.build do
   # == Simple Dashboard Section
   # Here is an example of a simple dashboard section
   #
-    section "Recent Rsvps" do
+    section "Recent Rsvps", priority: 1 do
       ul do
         Rsvp.order(:created_at).limit(5).each do |rsvp|
           li link_to(rsvp.name, admin_rsvp_path(rsvp))
         end
       end unless Rsvp.count == 0
     end
+    section "Current Guest Count", priority: 2 do
+      ul do
+        li "Guests: #{Rsvp.where('can_attend = ?', true).inject(0){|sum, rsvp| sum + rsvp.guests.count }}"
+        li "Kids: #{Rsvp.where('can_attend = ?', true).inject(0){|sum, rsvp| sum + rsvp.kids.count }}"
+        li "Total: #{Rsvp.where('can_attend = ?', true).inject(0){|sum, rsvp| sum + (rsvp.guests.count + rsvp.kids.count) }}"
+      end
+    end
+
   
   # == Render Partial Section
   # The block is rendered within the context of the view, so you can
