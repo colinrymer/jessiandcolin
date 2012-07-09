@@ -9,7 +9,7 @@ ActiveAdmin::Dashboards.build do
   #
     section "Recent Rsvps", priority: 1 do
       ul do
-        Rsvp.order(:created_at).limit(5).each do |rsvp|
+        Rsvp.order('created_at desc').limit(5).each do |rsvp|
           li link_to(rsvp.name, admin_rsvp_path(rsvp))
         end
       end unless Rsvp.count == 0
