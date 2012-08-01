@@ -8,6 +8,7 @@ Colinandjessionrails::Application.routes.draw do
   get 'party' => 'parties#index', as: 'party'
 
   match "/rsvp" => redirect("/rsvps/new")
+  match "/rsvps" => redirect("/rsvps/new")
 
   resource :story, :registry, :noog, :wedding
   resources :rsvps
